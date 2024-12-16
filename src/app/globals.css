@@ -12,10 +12,14 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+  .button{
+    background:black;
+    color:white;
+  }
 }
 
 body {
-  color: var(--foreground);
+   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }

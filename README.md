@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# understand basic concept of useAuth in next.js 
+first we create a file useAuth.js in which we create sign-in and sign-up page and at last we return this as a custom hook {in this } for use in other file easily 
+then create a component file in which we use this file and see autentication .
 
-## Getting Started
+# Now i Add protection layer on all of this 
+create a folder in src/component/protected layer mean only register user may vist the cartain page and not other vist this page who want to go to this page he want to register first then he may to go there .
 
-First, run the development server:
+#  working 
+here we have two file admin and protected folder here come a problem here we add a feauture first understnad what the problem here comes that make problem for both of us what was that , admin panel only for admin and is botton also not show in guest dashboard now come a problem here , when guest click on search link and type /admin then he able to access admin dashboad that not good for me what we do now , for that we add a feature that is add protection layer mean after that only admin only able to access this folder . ok that fine now . 
+for that we write our code in useEffect mean while load time they juge who is the authuser he is the admin he is guest user see code now 
+```bash 
+  useEffect(()=>{
+    if(!loading && authUser.role !== ("admin")){
+      router.push("/");
+    }
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  },[loading,authUser])
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+first we import the authUser detail that help us , in our code first we judge who is the user , our code say that 
+1) !loading if loading stop then move next .
+2) authuser.role !== ("admin") says that if the authuser.role not equal to admin then move to home page .
