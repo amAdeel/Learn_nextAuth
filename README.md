@@ -1,36 +1,11 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Understand the basic concept of use hook .
+first we create a file in component file wioth propal coding like that file name "useAuth" in this file we create two function on for sign-in and one for signout and import all this fumction and usestate value which we set in state is imported as a custom hook . {signin, signUp ,state-name } by this we easily use this value in other file where we want this , like i have a simple file for render user from one file to other file by using router in next . here we want user go to other option and the person vist first time go to other page .. 
 
-## Getting Started
-
-First, run the development server:
-
+##### create another file 
+which name is App.jsx here we apply all the logic where i user go after if he is sign-in or while he vist first time the page . 
+1) first of all we import that custom hook that we export from the useauth.js file like that
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+//import the custom hook 
+const {signin, signUp, state-name }=useAuth()
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+after importing this code u are easily use these function and value in curly bracket {signin} like that. 
